@@ -1,0 +1,5 @@
+Exception in thread "main" java.io.FileNotFoundException: info/seoul.in.txt (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at Subway.main(Subway.java:8)

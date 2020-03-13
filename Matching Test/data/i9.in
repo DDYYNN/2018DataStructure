@@ -1,0 +1,8 @@
+< script/kipa.java
+? static void
+@ 19
+@ 49
+< Copier.java
+? != null
+@ 59
+QUIT

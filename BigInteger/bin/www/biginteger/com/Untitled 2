@@ -1,0 +1,54 @@
+public class BigInteger{
+
+	1) Instance Variables
+		public static final Pattern EXPRESSION_PATTERN = Pattern.compile("");
+
+	2) Constructor
+		BigInteger(int i);
+		Biginteger(int []);
+		BigInteger(String s);
+		
+	3) Operation
+		add(BigInteger big);
+		subtract(BigInteger big);
+		multiply(BigInteger big);
+	
+		
+		
+}
+
+1. parser:
+(-)20000000000 * (+)30000240000 과 같은 형태이므로
+공백제거[(+,- 가 0개 또는 1개) + (숫자) + (+,*,-가 1개) + (+,-가 0개 또는 1개) + (숫자)]로 받는다.
+1 -> num1의 sign
+2 -> num1의 intChar
+3 -> 연산자 case
+4 -> num2의 sign
+5 -> num2의 intChar
+로 전달한다.
+
+(부호를 포함한 100자리 이하 숫자 + 공백) + 연산자 토큰 + (부호를 포함한 100자리 이하 숫자 + 공백)
+따라서 String에는 부호와 공백을 포함한 100자리 이하 숫자로 된 문자열이 전달된다.
+
+2. Constructor
+기준을 String으로 한다.
+String의 공백을 제거한 후
+부호를 읽어들여 sign에 전달하고,
+숫자는 각각 intChar에 저장한다.
+
+3. add
+1) +.add(+) : e.g. 1234 + 5678910
+4 3 2 1
+0 1 9 8 7 6 5
+4 4 1 0 8 6 5
+maxlen = length() > big.length() ? : legnth(), big.length();
+String result = "";
+int carry = 0;
+for(int i = 0; i < maxlen; i++){
+	int n1 = intvalue(intChar[i]); int n2 = intvalue(big.intChar[i])	// intvalue(!null) = !null - '0', intvalue(null) = 0;
+	int sumup = n1 + n2 + carry;
+	result = charvalue(sumup % 10) + result;
+	carry = sumup/10; 
+}
+if(carry > 0) result = '1' + result;
+return new BigInteger(result);

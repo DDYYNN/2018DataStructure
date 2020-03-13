@@ -1,0 +1,32 @@
+# Subway checking list
+
+# These are the most basic things.
+basic seoul
+random_seoul seoul
+
+# These are some tricky things.
+zero_cycle zero_cycle
+lipsum overflow
+same_lanes same_lanes
+
+# These are the large things.
+large1 large
+large2 large
+large3 large
+large4 large
+large5 large
+large6 large
+large7 large
+large8 large
+large9 large
+large10 large
+
+# For Your Perfection: This is a :thinking_face: thing.
+# That means you don't have to consider these cases.
+many_lanes many_lanes
+random_seoul_big seoul_big
+random_changing_big seoul_big
+
+# These are the most (additional) basic things.
+basic_changing seoul
+random_changing seoul
